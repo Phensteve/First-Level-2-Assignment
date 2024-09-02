@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap/bootstrap-5.0.2-dist/css/bootstrap.css">
+    <title>Document</title>
+</head>
+<body class="p-4 bg-light">
+    <style>
+        .d_none{
+            display: none;
+        }
+        .div_inline{
+            display: flex;
+        }
+        span{
+            font-size: larger;
+        }
+        .d_end{
+            position: fixed;
+            right: 2vw;
+            bottom: 5px;
+            padding-top: 15px;
+            margin-bottom: 0;
+            z-index: 997;
+        }
+    </style>
+    <h1 class="text-center">Questions</h1>
+    <ol>
+        <li>
+            <label for="question_1"><h5>How many continents are there in the world.</h5></label><br>
+            <div class="div_inline">
+                <input type="text" name="question_1" class="form-control w-75" id="question_1">
+                <span class="d_none" id="question_1_tick">✅</span>
+                <span class="d_none" id="question_1_cross">❌</span>
+            </div>
+        </li>
+        <li>
+            <label for="question_2"><h5>How many states are in Nigeria.</h5></label><br>
+            <div class="div_inline">
+                <input type="text" name="question_2" class="form-control w-75" id="question_2">
+                <span class="d_none" id="question_2_tick">✅</span>
+                <span class="d_none" id="question_2_cross">❌</span>
+            </div>
+        </li>
+        <li>
+            <label for="question_3"><h5>How many states are in the US.</h5></label><br>
+            <div class="div_inline">
+                <input type="text" name="question_3" class="form-control w-75" id="question_3">
+                <span class="d_none" id="question_3_tick">✅</span>
+                <span class="d_none" id="question_3_cross">❌</span>
+            </div>
+        </li>
+        <li>
+            <label for="question_4"><h5>How many groups are in the periodic table of elements.</h5></label><br>
+            <div class="div_inline">
+                <input type="text" name="question_4" class="form-control w-75" id="question_4">
+                <span class="d_none" id="question_4_tick">✅</span>
+                <span class="d_none" id="question_4_cross">❌</span>
+            </div>
+        </li>
+        <li>
+            <label for="question_5"><h5>How many equations of motion are there.</h5></label><br>
+            <div class="div_inline">
+                <input type="text" name="question_5" class="form-control w-75" id="question_5">
+                <span class="d_none" id="question_5_tick">✅</span>
+                <span class="d_none" id="question_5_cross">❌</span>
+            </div>
+        </li>
+    </ol>
+    <button class="btn btn-secondary p-2 m-4" onclick="check_score()">Submit</button>
+    <div id="user_score"></div>
+    <div class="d_end">designed by oluyo © 😁</div>
+</body>
+<script>
+    function check_score() {
+        if (question_1.value == "" || question_2.value == "" || question_3.value == "" || question_4.value == "" || question_5.value == "") {
+
+            user_score.innerHTML = "Answer all the questions! 😢"
+
+        }else{
+        
+            if (question_1.value.toLowerCase() == "seven" || question_1.value == 7) {
+                score_question_1 = 1
+                question_1_tick.style.display = "inline"
+                question_1_cross.style.display = "hidden"
+            }else{
+                score_question_1 = 0
+                question_1_cross.style.display = "inline"
+                question_1_tick.style.display = "hidden"
+            }
+            
+            if (question_2.value.toLowerCase() == "thirty six" || question_2.value.toLowerCase() == "thirty-six" || question_2.value.toLowerCase() == "thirtysix" || question_2.value == 36) {   
+                score_question_2 = 1
+                question_2_tick.style.display = "inline"
+                question_2_cross.style.display = "hidden"
+            }else{
+                score_question_2 = 0
+                question_2_tick.style.display = "hidden"
+                question_2_cross.style.display = "inline"
+            }
+            
+            if (question_3.value.toLowerCase() == "fifty" || question_3.value == 50) {
+                score_question_3 = 1
+                question_3_tick.style.display = "inline"
+                question_3_cross.style.display = "hidden"
+            }else{
+                score_question_3 = 0
+                question_3_tick.style.display = "hidden"
+                question_3_cross.style.display = "inline"
+            }
+            
+            if (question_4.value.toLowerCase() == "eight" || question_4.value == 8) {
+                score_question_4 = 1
+                question_4_tick.style.display = "inline"
+                question_4_cross.style.display = "hidden"
+            }else{
+                score_question_4 = 0
+                question_4_tick.style.display = "hidden"
+                question_4_cross.style.display = "inline"
+            }
+            
+            if (question_5.value.toLowerCase() == "four" || question_5.value == 4) {
+                score_question_5 = 1
+                question_5_tick.style.display = "inline"
+                question_5_cross.style.display = "hidden"
+            }else{
+                score_question_5 = 0
+                question_5_tick.style.display = "hidden"
+                question_5_cross.style.display = "inline"
+            }
+
+            var score = score_question_1 + score_question_2 + score_question_3 + score_question_4 + score_question_5
+    
+            user_score.innerHTML = "You got " + score + " out of 5"
+        }
+
+    }
+</script>
+</html>
